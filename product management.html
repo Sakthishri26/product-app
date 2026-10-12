@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Management</title>
+  <link rel="stylesheet" href="product-management.css">
+  <script src="product-management.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <h1>Product Management</h1>
+
+    <section class="card" aria-labelledby="add-product-heading">
+      <h2 id="add-product-heading">Add New Product</h2>
+      <form id="productForm">
+        <div class="product-form-grid">
+          <label>
+            <span>Product name</span>
+            <input type="text" id="NAME" name="NAME" placeholder="Product Name">
+          </label>
+          <label>
+            <span>Category</span>
+            <select id="CATEGORY" name="CATEGORY">
+              <option value="Electronics">Electronics</option>
+              <option value="Books">Books</option>
+              <option value="Cloth">Cloth</option>
+              <option value="Food">Food</option>
+              <option value="Beauty &amp; fashion">Beauty &amp; fashion</option>
+            </select>
+          </label>
+          <label>
+            <span>Price</span>
+            <input type="number" id="PRICE" name="PRICE" placeholder="Product Price">
+          </label>
+          <label>
+            <span>Quantity</span>
+            <input type="number" id="QUANTITY" name="QUANTITY" placeholder="Product Quantity">
+          </label>
+        </div>
+        <button type="submit" id="addBtn">Add Product</button>
+      </form>
+    </section>
+
+    <section class="card" aria-labelledby="inventory-heading">
+      <h2 id="inventory-heading">Product Inventory</h2>
+      <div class="inventory-controls">
+        <label class="visually-hidden" for="productSearch">Search products</label>
+        <input type="text" id="productSearch" placeholder="Search products...">
+        <label class="visually-hidden" for="inventorySort">Sort products</label>
+        <select id="inventorySort">
+          <option value="default">Default order</option>
+          <option value="price-ascending">Price: Low to High</option>
+          <option value="price-descending">Price: High to Low</option>
+          <option value="quantity-ascending">Quantity: Low to High</option>
+          <option value="quantity-descending">Quantity: High to Low</option>
+        </select>
+      </div>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Serial No.</th>
+              <th scope="col">Product Name</th>
+              <th scope="col">Category</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="5">Total stock value</th>
+              <td id="totalStockValue">0.00</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
